@@ -1,0 +1,88 @@
+<style>
+    .custom-form-padding {
+        padding: 10px;
+    }
+    
+    input {
+        border: 1px solid silver !important;
+        /* border-radius:15px !important; */
+    }
+    
+    .form {
+        background: white;
+        padding: 5px;
+        box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.06);
+        border-radius: 5px;
+    }
+    
+    .center-holder {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: green;
+        background: -webkit-linear-gradient(to right, green, #799F0C);
+        background: linear-gradient(to right, green, #799F0C);
+    }
+</style>
+
+
+<div class="center-holder">
+    <div class="ui container center aligned">
+        <i class="icon leaf huge orange"></i>
+        <p class="ui header orange" style="margin-top:7px;">Login</p>
+        <div class="ui form unstackable" style="width:320px;margin:auto;">
+            <br>
+            <div class="fields custom-form-padding">
+                <div class="sixteen wide field">
+                    <input type="text" placeholder="Email">
+                </div>
+            </div>
+
+            <div class="fields custom-form-padding">
+                <div class="sixteen wide field">
+                    <!--         <label>Email</label> -->
+                    <input type="password" placeholder="password">
+                </div>
+            </div>
+
+            <div class="fields custom-form-padding">
+                <div class="sixteen wide field center aligned" style="text-align:center;">
+
+                    <div class="ui button green fluid" id="login-button">Login</div>
+
+                    <p style="color:silver;">
+                        <br /> Dont have an account?
+                        <a href="#/login" style="color:green;">Sign up</a>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+    App.LoginController = {
+        login: function() {
+            console.log("Login clicked");
+        }
+    }
+
+    $(function() {
+
+        $("#login-button").click(function(e) {
+            e.preventDefault();
+            $(".close").show();
+            App.FullScreen.hide();
+            App.LoginController.login();
+        });
+
+        $(".close").hide();
+    });
+</script>

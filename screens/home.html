@@ -1,0 +1,96 @@
+<style>
+    .tinycard {
+        background: white;
+        box-shadow: -1px 1px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        padding: 10px;
+        padding-top: 15px;
+        min-height: 100px;
+    }
+    
+    .tinycard .icon {
+        margin-bottom: 15px !important;
+    }
+</style>
+
+<div class="ui container center aligned" id="home-screen">
+</div>
+
+<template id="home-screen-template">
+
+    <h2 class="animated fadeInDown _1 blue" style="margin-top: 20px;">
+        Rent for Cause
+    </h2>
+
+    <div class="ui two column grid animated fadeInUp _1" style="margin-top: 10px;">
+        <div class="column center aligned">
+            <div class="tinycard" onclick="window.location.href='#/schedule'">
+                <h4 class="ui icon header">
+                    <i class="list icon orange"></i>
+                    <div class="content">
+                        My Rentals
+                        <div class="sub header">My current rentals</div>
+                    </div>
+                </h4>
+            </div>
+        </div>
+        <div class="column center aligned">
+            <div class="tinycard" onclick="window.location.href='#/allspeakers'">
+                <h4 class="ui icon header">
+                    <i class="share alternate icon brown"></i>
+
+                    <div class="content">
+                        New Rental
+                        <div class="sub header">Rent New Item</div>
+                    </div>
+                    </h>
+            </div>
+        </div>
+        <div class="column center aligned">
+            <div class="tinycard" onclick="window.location.href='#/allspeakers'">
+                <h4 class="ui icon header">
+                    <i class="history icon teal"></i>
+                    <div class="content">
+                        History
+                        <div class="sub header">Rental History</div>
+                    </div>
+                    </h>
+            </div>
+        </div>
+        <div class="column center aligned">
+            <div class="tinycard" onclick="window.location.href='#/allspeakers'">
+                <h4 class="ui icon header">
+                    <i class="settings  icon blue"></i>
+                    <div class="content">
+                        Settings
+                        <div class="sub header">My app preferences</div>
+                    </div>
+                    </h>
+            </div>
+        </div>
+    </div>
+
+</template>
+
+
+<script>
+    App.HomeScreenController = {
+        userObject: {
+            user_name: "Moira",
+            todays_date: new Date()
+        },
+        renderUI: function() {
+            var template = $('#home-screen-template').html();
+            var html = Mustache.to_html(template, this.userObject);
+            $("#home-screen").html(html);
+        }
+    }
+
+    $(function() {
+        var anotherUser = {
+            user_name: "James",
+        };
+        App.HomeScreenController.userObject = anotherUser;
+        App.HomeScreenController.renderUI();
+    });
+</script>

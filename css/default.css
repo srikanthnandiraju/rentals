@@ -1,0 +1,176 @@
+body,
+html {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    font-family: 'Source Sans Pro', sans-serif;
+    background: #f5f5f5;
+}
+
+#stage {
+    margin-top: 44px;
+    /* border: 1px solid red; */
+}
+
+#nprogress .bar {
+    top: 55px;
+    background: red;
+    height: 4px;
+    z-index: 9999;
+}
+
+#fullscreenElement {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-transform: translate(0px, -100%) scale(0, 0);
+    -moz-transform: translate(0px, -100%) scale(0, 0);
+    -o-transform: translate(0px, -100%) scale(0, 0);
+    -ms-transform: translate(0px, -100%) scale(0, 0);
+    transform: translate(0px, -100%) scale(0, 0);
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    /*	background: url(../img/bg.jpg) no-repeat center top;*/
+    /*background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.4)), url(../img/bg.jpg) no-repeat center center;*/
+    background-size: cover;
+    z-index: 10000 !important;
+}
+
+#fullscreenElement.open {
+    -webkit-transform: translate(0px, 0px) scale(1, 1);
+    -moz-transform: translate(0px, 0px) scale(1, 1);
+    -o-transform: translate(0px, 0px) scale(1, 1);
+    -ms-transform: translate(0px, 0px) scale(1, 1);
+    transform: translate(0px, 0px) scale(1, 1);
+    opacity: 1;
+}
+
+.close {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    opacity: 1;
+    padding: 10px 17px;
+    z-index: 1000 !important;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+#fullscreen_stage {
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+    position: absolute;
+    top: 25px;
+    left: 1px;
+    bottom: 1px;
+    right: 1px;
+}
+
+
+/* SIDE NAV JS related code */
+
+.sn-backdrop {
+    background: #000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+    opacity: 0;
+    z-index: 50;
+    will-change: opacity;
+}
+
+.sn-visible .sn-backdrop {
+    display: block
+}
+
+.sn-sidenav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 100;
+    overflow-y: auto;
+    will-change: transform;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    /* background-color: #3498DB; */
+    background-color: #222;
+    /* padding: 20px; */
+    color: #fff;
+}
+
+.sn-content {
+    position: relative;
+    z-index: 10
+}
+
+.sn-visible,
+.sn-visible body,
+.sn-visible .sn-content {
+    overflow: hidden
+}
+
+#content {
+    position: absolute;
+    /* border: 2px solid red; */
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    overflow: hidden;
+}
+
+.side-menu-items {
+    background: none !important;
+    border: none !important;
+    width: 250px !important;
+}
+
+#title-text {
+    width: 100%;
+    text-align: center;
+    padding-top: 14px;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+}
+
+#navbar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+#stage {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    right: 0px;
+    bottom: 2px;
+    overflow: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+#sidenav {
+    /* background: linear-gradient(#333, #111) !important; */
+    background: linear-gradient(#0ba360, #3cba92) !important;
+    width: 250px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 200 !important;
+    letter-spacing: 1px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
