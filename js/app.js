@@ -3,7 +3,6 @@ var App = {};
 // Global Event Bus to fire and listen to events
 App.Events = {
     emit: function(event_name, event_payload) {
-        console.log("PUBED");
         $('body').trigger(event_name, event_payload);
     },
     listen: function(event_name, callback) {
@@ -55,4 +54,8 @@ App.Events.listen("hide-side-nav", function() {
 });
 App.Events.listen("show-side-nav", function() {
     App.sidenav.open();
+});
+
+App.Events.listen("show-route", function(whereto) {
+    window.location.href = whereto;
 });

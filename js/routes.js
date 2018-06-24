@@ -20,5 +20,5 @@ Path.map("#/speaker").to(function() {
     $("#stage").load("screens/speaker.html");
 });
 
-Path.root("#/home");
+Path.root("#/login");
 Path.listen();

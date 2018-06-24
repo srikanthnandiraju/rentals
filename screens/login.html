@@ -69,8 +69,12 @@
 
 <script type="text/javascript" charset="utf-8">
     App.LoginController = {
-        login: function() {
-            console.log("Login clicked");
+        login: function(u, p) {
+            console.log("Login clicked now go home");
+            $(".close").show();
+            App.FullScreen.hide();
+            // After auth...
+            App.Events.emit('show-route', "#/home");
         }
     }
 
@@ -78,9 +82,7 @@
 
         $("#login-button").click(function(e) {
             e.preventDefault();
-            $(".close").show();
-            App.FullScreen.hide();
-            App.LoginController.login();
+            App.LoginController.login('uname', 'pw');
         });
 
         $(".close").hide();
