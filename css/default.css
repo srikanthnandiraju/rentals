@@ -4,7 +4,8 @@ html {
     padding: 0px;
     overflow: hidden;
     font-family: 'Source Sans Pro', sans-serif;
-    background: #f5f5f5;
+    background: #f9fef9;
+    /* background: #e3fae3; */
 }
 
 #stage {
