@@ -1,0 +1,30 @@
+<br>
+<div class="ui container animated fadeInUp">
+    <div class="ui cards manycards">
+    </div>
+</div>
+<template id="one-card">
+    <div class="ui fluid card raised">
+        <div class="content">
+            <!-- <i class="car icon right floated teal large"></i> -->
+            <span class="ui label right floated tag orange">${{.}}.00</span>
+
+            <div class="header">Bike Rental</div>
+            <div class="meta">
+                <span>Rent for {{.}} hours</span>
+            </div>
+            <div class="description">
+                Rent this green item for a reasonable price.
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+    $(function() {
+        var oneCard = $("#one-card").html();
+        for (var i = 0; i < 10; i++) {
+            var html = Mustache.to_html(oneCard, i + 1);
+            $(".manycards").append(html);
+        }
+    });
+</script>

@@ -1,0 +1,28 @@
+<br>
+<div class="ui container">
+    <div class="ui two cards manycards">
+    </div>
+</div>
+<template id="one-card">
+    <div class="ui fluid card raised">
+        <div class="content">
+            <i class="car icon right floated teal large"></i>
+            <div class="header">Bike Rental</div>
+            <div class="meta">
+                <span>{{.}} days ago</span>
+            </div>
+            <div class="description">
+                Bike picked up at Kachiguda station
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+    $(function() {
+        var oneCard = $("#one-card").html();
+        for (var i = 0; i < 20; i++) {
+            var html = Mustache.to_html(oneCard, i + 1);
+            $(".manycards").append(html);
+        }
+    });
+</script>
